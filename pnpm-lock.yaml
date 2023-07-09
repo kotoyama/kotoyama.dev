@@ -3,7 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@11ty/eleventy': ^2.0.1
   autoprefixer: ^10.4.14
+  cross-env: ^7.0.3
   cssnano: ^6.0.1
+  dotenv: ^16.3.1
   eslint: ^8.44.0
   eslint-config-prettier: ^8.8.0
   eslint-plugin-prettier: ^4.2.1
@@ -21,7 +23,9 @@ specifiers:
 devDependencies:
   '@11ty/eleventy': 2.0.1
   autoprefixer: 10.4.14_postcss@8.4.24
+  cross-env: 7.0.3
   cssnano: 6.0.1_postcss@8.4.24
+  dotenv: 16.3.1
   eslint: 8.44.0
   eslint-config-prettier: 8.8.0_eslint@8.44.0
   eslint-plugin-prettier: 4.2.1_qkgbdr345imkz5woyd5e5k6xse
@@ -698,6 +702,14 @@ packages:
       path-type: 4.0.0
     dev: true
 
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
+
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -940,6 +952,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: true
+
+  /dotenv/16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /ee-first/1.1.1:

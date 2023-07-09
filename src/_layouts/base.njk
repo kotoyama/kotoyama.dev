@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="{{ meta.language }}" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ meta.description }}">
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
-    <title>Ekaterina Maltseva</title>
+    <title>{{ meta.title }}</title>
   </head>
   <body>
-    {% include "partials/_navigation.njk" %}
-    <main>{{content | safe}}</main>
+    <div id="app">
+      <div class="terminal">
+        {% include "partials/_toolbar.njk" %}
+        {% include "partials/_navigation.njk" %}
+        <main class="window">{{content | safe}}</main>
+      </div>
+    </div>
   </body>
 </html>

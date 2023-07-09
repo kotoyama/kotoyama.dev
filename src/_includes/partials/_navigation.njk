@@ -1,5 +1,15 @@
+{% set currentUrl = page.url %}
+
 <nav>
-  {%- for item in collections.page -%}
-    <a href="{{ item.url }}">{{ item.data.title }}</a>
-  {%- endfor -%}
+  <ul class="tabs">
+    {%- for item in collections.page %}
+      <li class="tab">
+        <a
+          {% if currentUrl === item.url %} aria-current="page" {% endif %}
+          href="{{ item.url }}">
+            {{ item.data.title }}
+        </a>
+      </li>
+    {%- endfor %}
+  </ul>
 </nav>
