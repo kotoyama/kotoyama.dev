@@ -1,7 +1,9 @@
 const { EleventyI18nPlugin } = require('@11ty/eleventy')
 
 module.exports = function (config) {
-  config.addPassthroughCopy('src/assets')
+  config.addPassthroughCopy({
+    './public/': '/',
+  })
 
   config.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: 'en',
