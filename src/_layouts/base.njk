@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ meta.language }}" data-theme="light">
+<html lang="{{ page.lang }}" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ meta.description }}">
+    <meta name="description" content="{{ meta[page.lang].description }}">
+    <title>{{ meta[page.lang].title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
-    <title>{{ meta.title }}</title>
   </head>
   <body>
     <div id="app">
