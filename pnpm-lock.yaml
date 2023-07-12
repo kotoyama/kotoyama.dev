@@ -9,6 +9,8 @@ specifiers:
   eslint: ^8.44.0
   eslint-config-prettier: ^8.8.0
   eslint-plugin-prettier: ^4.2.1
+  markdown-it: ^13.0.1
+  markdown-it-attrs: ^4.1.6
   nano-staged: ^0.8.0
   postcss: ^8.4.24
   postcss-custom-media: ^9.1.5
@@ -29,6 +31,8 @@ devDependencies:
   eslint: 8.44.0
   eslint-config-prettier: 8.8.0_eslint@8.44.0
   eslint-plugin-prettier: 4.2.1_qkgbdr345imkz5woyd5e5k6xse
+  markdown-it: 13.0.1
+  markdown-it-attrs: 4.1.6_markdown-it@13.0.1
   nano-staged: 0.8.0
   postcss: 8.4.24
   postcss-custom-media: 9.1.5_postcss@8.4.24
@@ -1780,6 +1784,15 @@ packages:
   /map-obj/4.3.0:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
+    dev: true
+
+  /markdown-it-attrs/4.1.6_markdown-it@13.0.1:
+    resolution: {integrity: sha512-O7PDKZlN8RFMyDX13JnctQompwrrILuz2y43pW2GagcwpIIElkAdfeek+erHfxUOlXWPsjFeWmZ8ch1xtRLWpA==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      markdown-it: '>= 9.0.0'
+    dependencies:
+      markdown-it: 13.0.1
     dev: true
 
   /markdown-it/13.0.1:
