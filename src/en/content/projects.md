@@ -4,17 +4,17 @@ tags: page
 permalink: /en/projects/
 ---
 
-# # Indigenous initiatives
+# Indigenous initiatives
 
 > 2023
 
 [The "Non-Russian World"](https://pluralisticworld.com/){target="_blank" rel="noreferrer"} project focuses on Russian colonization and the underrepresented and lacking agency ethnic groups in contemporary Russia.
 
- I built the entire landing page from scratch within a short timeframe, ensuring responsiveness and cross-browser compatibility. Additionally, I created two versions of the website, one in Russian and another in English. Dealt with SVG animations to enhance UX. Optimized the project to be highly lightweight.
+I built the entire landing page from scratch within a short timeframe, ensuring responsiveness and cross-browser compatibility. Additionally, I created two versions of the website, one in Russian and another in English. Dealt with SVG animations to enhance UX. Optimized the project to be highly lightweight.
 
- Stack: TypeScript, Pug
+Stack: TypeScript, Pug
 
-# # WhatsAuth
+# WhatsAuth
 
 > 2023
 
@@ -24,7 +24,7 @@ I developed two crucial features for the project: a phone number validation flow
 
 Stack: React, TypeScript
 
-# # Nice Studio
+# Nice Studio
 
 > 2022-2023
 
@@ -34,8 +34,7 @@ I made the whole subscription flow: subscribing, cancellation, and pausing. Inte
 
 Stack: Next.js, TypeScript
 
-
-# # WMS Stock Management
+# WMS Stock Management
 
 > 2021-2022
 
@@ -45,7 +44,7 @@ I participated in the core development and project refactoring. Made huge busine
 
 Stack: React, Node.js, TypeScript
 
-# # Seturon
+# Seturon
 
 > 2021
 

@@ -52,6 +52,10 @@
       margin-bottom: var(--space-xs);
       font-size: 2.5em;
       color: var(--color-green100);
+
+      &:before {
+        content: '# ';
+      }
     }
 
     & p {

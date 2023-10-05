@@ -4,7 +4,7 @@ tags: page
 permalink: /en/experience/
 ---
 
-# # 42px
+# 42px
 
 > Aug 2021 – now
 
@@ -14,7 +14,7 @@ Frontend Engineer
 
 I'm working as a web and mobile developer. I write code for products and startups and work on outsourcing projects.
 
-# # Rudos
+# Rudos
 
 > Jan 2021 – Jul 2021
 
@@ -24,7 +24,7 @@ Frontend Engineer
 
 I was working on [InvestFuture Club](https://plus.investfuture.club/){target="_blank" rel="noreferrer"} – the largest digital media in Russia in terms of investment and personal finance. I've developed the main website and admin panel. As a result, the MVP was successfully developed and launched into production.
 
-# # Apricode
+# Apricode
 
 > Jun 2020 – Dec 2020
 
