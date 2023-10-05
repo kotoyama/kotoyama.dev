@@ -7,4 +7,8 @@ module.exports = {
     title: 'Ekaterina Maltseva',
     description: 'Frontend Engineer',
   },
+  ru: {
+    title: 'Екатерина Мальцева',
+    description: 'Фронтенд разработчица',
+  },
 }
