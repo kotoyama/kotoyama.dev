@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "markdown-it": "^13.0.2",
     "markdown-it-attrs": "^4.1.6",
+    "markdown-it-link-attributes": "^4.0.1",
     "nano-staged": "^0.8.0",
     "postcss": "^8.4.31",
     "postcss-custom-media": "^10.0.1",

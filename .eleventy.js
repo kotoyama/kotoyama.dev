@@ -1,6 +1,7 @@
 const { EleventyI18nPlugin } = require('@11ty/eleventy')
 const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
+const markdownItLinkAttr = require('markdown-it-link-attributes')
 
 module.exports = function (config) {
   config.addPassthroughCopy({
@@ -12,7 +13,7 @@ module.exports = function (config) {
   })
 
   config.setServerOptions({
-    module: "@11ty/eleventy-server-browsersync",
+    module: '@11ty/eleventy-server-browsersync',
     port: 3000,
     open: false,
     callbacks: {
@@ -20,21 +21,21 @@ module.exports = function (config) {
         bs.addMiddleware('*', (req, res) => {
           if (req.url === '/') {
             res.writeHead(302, {
-              location: '/en/'
-            });
+              location: '/en/',
+            })
             res.end()
           }
         })
-      }
-    }
+      },
+    },
   })
 
-  config.addCollection("content_en", function (collection) {
-    return collection.getFilteredByGlob("./src/en/content/*.md")
+  config.addCollection('content_en', function (collection) {
+    return collection.getFilteredByGlob('./src/en/content/*.md')
   })
 
-  config.addCollection("content_ru", function (collection) {
-    return collection.getFilteredByGlob("./src/ru/content/*.md")
+  config.addCollection('content_ru', function (collection) {
+    return collection.getFilteredByGlob('./src/ru/content/*.md')
   })
 
   config.setLibrary(
@@ -43,7 +44,19 @@ module.exports = function (config) {
       html: true,
       breaks: true,
       linkify: true,
-    }).use(markdownItAttrs),
+    })
+      .use(markdownItAttrs)
+      .use(markdownItLinkAttr, [
+        {
+          matcher(href) {
+            return href.match(/^https?:\/\//g)
+          },
+          attrs: {
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          },
+        },
+      ]),
   )
 
   return {
