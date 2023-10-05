@@ -1,6 +1,7 @@
 ---
 title: '~/about'
 tags: page
+permalink: /en/about/
 ---
 
 # # Technical skills

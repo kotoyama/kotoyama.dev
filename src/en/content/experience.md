@@ -1,6 +1,7 @@
 ---
 title: '~/experience'
 tags: page
+permalink: /en/experience/
 ---
 
 # # 42px

@@ -14,7 +14,7 @@ module.exports = function (config) {
   config.setServerOptions({
     module: "@11ty/eleventy-server-browsersync",
     port: 3000,
-    open: true,
+    open: false,
     callbacks: {
       ready: function (err, bs) {
         bs.addMiddleware('*', (req, res) => {
@@ -27,6 +27,14 @@ module.exports = function (config) {
         })
       }
     }
+  })
+
+  config.addCollection("content_en", function (collection) {
+    return collection.getFilteredByGlob("./src/en/content/*.md")
+  })
+
+  config.addCollection("content_ru", function (collection) {
+    return collection.getFilteredByGlob("./src/ru/content/*.md")
   })
 
   config.setLibrary(

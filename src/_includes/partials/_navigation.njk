@@ -1,8 +1,9 @@
 {% set currentUrl = page.url %}
+{% set content = collections["content_" + lang] %}
 
 <nav>
   <ul class="tabs">
-    {%- for item in collections.page %}
+    {%- for item in content %}
       <li class="tab">
         <a
           {% if currentUrl === item.url %} aria-current="page" {% endif %}
