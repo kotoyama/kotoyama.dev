@@ -43,6 +43,11 @@
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 
+    & blockquote {
+      padding: 0 1.5em;
+      border-left: 0.35em solid var(--color-grey100);
+    }
+
     & h1 {
       margin-bottom: var(--space-xs);
       font-size: 2.5em;
