@@ -11,6 +11,24 @@ module.exports = function (config) {
     defaultLanguage: 'en',
   })
 
+  config.setServerOptions({
+    module: "@11ty/eleventy-server-browsersync",
+    port: 3000,
+    open: true,
+    callbacks: {
+      ready: function (err, bs) {
+        bs.addMiddleware('*', (req, res) => {
+          if (req.url === '/') {
+            res.writeHead(302, {
+              location: '/en/'
+            });
+            res.end()
+          }
+        })
+      }
+    }
+  })
+
   config.setLibrary(
     'md',
     markdownIt({
