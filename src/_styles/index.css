@@ -2,6 +2,7 @@
 @import './breakpoints.css';
 @import './fonts.css';
 @import './vars.css';
+@import './theme.css';
 @import './components/index.css';
 
 html {

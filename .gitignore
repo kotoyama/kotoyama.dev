@@ -28,3 +28,6 @@ dist-ssr
 
 # Bundle
 _site
+
+# Esbuild output
+src/_assets/js/

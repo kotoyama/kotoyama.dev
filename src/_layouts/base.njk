@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ meta[lang].description }}">
     <title>{{ meta[lang].title }}</title>
-    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="stylesheet" href="/styles/main.css">
+
+    {% set js %}
+    {% include "src/_assets/js/theme.js" %}
+    {% endset %}
+    <script type="module" defer>{{ js | safe }}</script>
   </head>
   <body>
     <div id="app">
       <div class="terminal">
         {% include "partials/_toolbar.njk" %}
         {% include "partials/_navigation.njk" %}
-        <main class="window">{{content | safe}}</main>
+        <main class="window">
+          {{content | safe}}
+          {% include "partials/_input.njk" %}
+        </main>
       </div>
     </div>
   </body>

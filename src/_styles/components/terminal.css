@@ -9,7 +9,7 @@
     align-items: center;
     height: 40px;
     padding: var(--space-s);
-    background-color: var(--color-white200);
+    background-color: var(--color-terminal-toolbar);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
@@ -39,7 +39,7 @@
     padding: var(--space-l);
     overflow: auto;
     overflow-wrap: break-word;
-    background-color: var(--color-white100);
+    background-color: var(--color-terminal-window);
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 
