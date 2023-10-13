@@ -3,6 +3,7 @@ const esbuild = require('esbuild')
 const { EleventyI18nPlugin } = require('@11ty/eleventy')
 const i18nPlugin = require('eleventy-plugin-i18n')
 const faviconsPlugin = require('eleventy-plugin-gen-favicons')
+const pluginPWA = require('eleventy-plugin-pwa-v2')
 
 const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
@@ -24,6 +25,24 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(faviconsPlugin, {
     generateManifest: false,
+  })
+  eleventyConfig.addPlugin(pluginPWA, {
+    cacheId: 'kotoyama.dev',
+    runtimeCaching: [
+      {
+        urlPattern: /\/$/,
+        handler: 'NetworkFirst',
+      },
+      {
+        urlPattern: /\.html$/,
+        handler: 'NetworkFirst',
+      },
+      {
+        urlPattern:
+          /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+        handler: 'StaleWhileRevalidate',
+      },
+    ],
   })
 
   // copy the contents of the `public` folder to the output folder

@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="manifest" href="{{ "/site.webmanifest" | locale_url }}"">
 
+    {% if meta.env == 'production' %}
+    {% include "src/_includes/service-worker.njk" %}
+    {% endif %}
+
     {% set js %}
     {% include "src/_assets/js/theme-preference.js" %}
     {% endset %}
