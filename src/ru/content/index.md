@@ -1,7 +1,7 @@
 ---
 title: '~'
 tags: page
-permalink: /ru/
+permalink: /{{ lang }}/
 ---
 
 aaaaa

@@ -1,7 +1,7 @@
 ---
 title: '~/projects'
 tags: page
-permalink: /en/projects/
+permalink: /{{ lang }}/projects/
 ---
 
 # Indigenous initiatives

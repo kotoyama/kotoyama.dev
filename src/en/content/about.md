@@ -1,7 +1,7 @@
 ---
 title: '~/about'
 tags: page
-permalink: /en/about/
+permalink: /{{ lang }}/about/
 ---
 
 # Technical skills

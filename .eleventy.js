@@ -1,5 +1,6 @@
 const esbuild = require('esbuild')
 
+const { EleventyI18nPlugin } = require('@11ty/eleventy')
 const i18nPlugin = require('eleventy-plugin-i18n')
 const faviconsPlugin = require('eleventy-plugin-gen-favicons')
 
@@ -11,6 +12,9 @@ const translations = require('./src/_data/i18n')
 
 module.exports = function (eleventyConfig) {
   // add plugins
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: 'en',
+  })
   eleventyConfig.addPlugin(i18nPlugin, {
     translations,
     defaultLanguage: 'en',
@@ -18,7 +22,9 @@ module.exports = function (eleventyConfig) {
       '*': 'en',
     },
   })
-  eleventyConfig.addPlugin(faviconsPlugin, {})
+  eleventyConfig.addPlugin(faviconsPlugin, {
+    generateManifest: false,
+  })
 
   // copy the contents of the `public` folder to the output folder
   eleventyConfig.addPassthroughCopy({
@@ -89,6 +95,7 @@ module.exports = function (eleventyConfig) {
     require('./src/_11ty/transforms/htmlMinifier'),
   )
 
+  // markdown
   eleventyConfig.setLibrary(
     'md',
     md.use(markdownItAttrs).use(markdownItLinkAttr, [

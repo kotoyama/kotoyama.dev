@@ -1,7 +1,7 @@
 ---
 title: '~'
 tags: page
-permalink: /en/
+permalink: /{{ lang }}/
 ---
 
 Hi! I'm Kate, a frontend engineer from Astana 👋

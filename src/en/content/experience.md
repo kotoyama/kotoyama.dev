@@ -1,7 +1,7 @@
 ---
 title: '~/experience'
 tags: page
-permalink: /en/experience/
+permalink: /{{ lang }}/experience/
 ---
 
 # 42px
