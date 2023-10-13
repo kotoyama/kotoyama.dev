@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}" dir="{{ dir }}" data-theme="light">
+<html lang="{{ lang }}" dir="{{ dir or 'ltr' }}" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,7 +10,15 @@
     <link rel="stylesheet" href="/styles/main.css">
 
     {% set js %}
-    {% include "src/_assets/js/theme.js" %}
+    {% include "src/_assets/js/theme-preference.js" %}
+    {% endset %}
+
+    {% set js %}
+    {% include "src/_assets/js/translator.js" %}
+    {% endset %}
+
+    {% set js %}
+    {% include "src/_assets/js/command-line.js" %}
     {% endset %}
     <script type="module" defer>{{ js | safe }}</script>
   </head>

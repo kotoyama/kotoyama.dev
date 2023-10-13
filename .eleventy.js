@@ -1,14 +1,17 @@
 const esbuild = require('esbuild')
 
-const { EleventyI18nPlugin } = require('@11ty/eleventy')
+const i18nPlugin = require('eleventy-plugin-i18n')
 
 const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
 const markdownItLinkAttr = require('markdown-it-link-attributes')
 
+const translations = require('./src/_data/i18n')
+
 module.exports = function (eleventyConfig) {
   // add plugins
-  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+  eleventyConfig.addPlugin(i18nPlugin, {
+    translations,
     defaultLanguage: 'en',
     fallbackLocales: {
       '*': 'en',
@@ -23,7 +26,11 @@ module.exports = function (eleventyConfig) {
   // run esbuild
   eleventyConfig.on('eleventy.before', async () => {
     await esbuild.build({
-      entryPoints: ['src/_scripts/theme.js'],
+      entryPoints: [
+        'src/_scripts/theme-preference.js',
+        'src/_scripts/command-line.js',
+        'src/_scripts/translator.js',
+      ],
       outdir: 'src/_assets/js',
       minify: process.env.NODE_ENV === 'production',
       sourcemap: process.env.NODE_ENV !== 'production',
@@ -53,6 +60,17 @@ module.exports = function (eleventyConfig) {
     },
   })
 
+  const md = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  })
+
+  // filters
+  eleventyConfig.addFilter('markdown', (content) => {
+    return md.render(content)
+  })
+
   // collections
   eleventyConfig.addCollection(
     'content_en',
@@ -71,23 +89,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary(
     'md',
-    markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true,
-    })
-      .use(markdownItAttrs)
-      .use(markdownItLinkAttr, [
-        {
-          matcher(href) {
-            return href.match(/^https?:\/\//g)
-          },
-          attrs: {
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
+    md.use(markdownItAttrs).use(markdownItLinkAttr, [
+      {
+        matcher(href) {
+          return href.match(/^https?:\/\//g)
         },
-      ]),
+        attrs: {
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        },
+      },
+    ]),
   )
 
   return {

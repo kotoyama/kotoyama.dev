@@ -67,6 +67,63 @@
         text-decoration: underline;
       }
     }
+
+    & code {
+      padding: 0.2em 0.4em;
+      background-color: var(--color-inline-code);
+      border-radius: 6px;
+    }
+
+    .history {
+      & p,
+      & ul,
+      & li {
+        margin-bottom: var(--space-xs);
+        font-size: 1.8rem;
+      }
+    }
+
+    .help {
+      display: inline-block;
+
+      & p {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid var(--color-orange100);
+        animation:
+          typing 2.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+    }
+
+    .field {
+      display: flex;
+      column-gap: 10px;
+      margin-bottom: var(--space-xxs);
+      font-size: 1.8rem;
+
+      .query {
+        display: inline-block;
+      }
+
+      .input {
+        flex: 1;
+        font-family: inherit;
+        font-size: 1.8rem;
+        color: inherit;
+        caret-color: var(--terminal-indicator-color);
+        background-color: inherit;
+        border: none;
+
+        &:not(:focus) {
+          border-left: 0.8rem solid var(--terminal-indicator-color);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
   }
 
   .tabs {
@@ -86,5 +143,24 @@
         }
       }
     }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-orange100);
   }
 }
