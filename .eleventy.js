@@ -1,6 +1,7 @@
 const esbuild = require('esbuild')
 
 const i18nPlugin = require('eleventy-plugin-i18n')
+const faviconsPlugin = require('eleventy-plugin-gen-favicons')
 
 const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
@@ -17,6 +18,7 @@ module.exports = function (eleventyConfig) {
       '*': 'en',
     },
   })
+  eleventyConfig.addPlugin(faviconsPlugin, {})
 
   // copy the contents of the `public` folder to the output folder
   eleventyConfig.addPassthroughCopy({
