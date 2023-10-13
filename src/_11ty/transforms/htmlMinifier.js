@@ -7,6 +7,7 @@ module.exports = (content, outputPath) => {
     process.env.NODE_ENV === 'production'
   ) {
     return htmlMinifier.minify(content, {
+      useShortDoctype: true,
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
       decodeEntities: true,
