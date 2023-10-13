@@ -24,8 +24,10 @@ const reflectPreference = () => {
   document.firstElementChild.setAttribute('data-theme', theme.value)
 }
 
-reflectPreference()
-useDark.addEventListener('change', ({ matches: isDark }) => {
-  theme.value = isDark ? 'dark' : 'light'
-  setPreference()
-})
+export const setupThemePreference = () => {
+  reflectPreference()
+  useDark.addEventListener('change', ({ matches: isDark }) => {
+    theme.value = isDark ? 'dark' : 'light'
+    setPreference()
+  })
+}

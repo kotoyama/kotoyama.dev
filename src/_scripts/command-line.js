@@ -28,27 +28,29 @@ const createHistoryCommand = (input) =>
     ${input}
   </div>`
 
-helpElement.addEventListener('animationend', () => {
-  helpElement.style.borderRight = 'none'
-  helpElement.style.whiteSpace = 'initial'
-})
+export const setupCommandLine = () => {
+  helpElement.addEventListener('animationend', () => {
+    helpElement.style.borderRight = 'none'
+    helpElement.style.whiteSpace = 'initial'
+  })
 
-inputElement.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
-    const inputValue = inputElement.value.trim().toLowerCase()
-    const command = Command.createCommand(inputValue)
+  inputElement.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      const inputValue = inputElement.value.trim().toLowerCase()
+      const command = Command.createCommand(inputValue)
 
-    if (command) {
-      const result = command.execute()
-      if (!(command instanceof ClearHistoryCommand)) {
+      if (command) {
+        const result = command.execute()
+        if (!(command instanceof ClearHistoryCommand)) {
+          historyElement.innerHTML += createHistoryCommand(inputValue)
+          if (result) historyElement.innerHTML += result
+        }
+      } else {
         historyElement.innerHTML += createHistoryCommand(inputValue)
-        if (result) historyElement.innerHTML += result
       }
-    } else {
-      historyElement.innerHTML += createHistoryCommand(inputValue)
-    }
 
-    inputElement.value = ''
-    windowElement.scrollTop = windowElement.scrollHeight
-  }
-})
+      inputElement.value = ''
+      windowElement.scrollTop = windowElement.scrollHeight
+    }
+  })
+}

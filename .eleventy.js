@@ -1,5 +1,3 @@
-const esbuild = require('esbuild')
-
 const { EleventyI18nPlugin } = require('@11ty/eleventy')
 const i18nPlugin = require('eleventy-plugin-i18n')
 const faviconsPlugin = require('eleventy-plugin-gen-favicons')
@@ -48,22 +46,6 @@ module.exports = function (eleventyConfig) {
   // copy the contents of the `public` folder to the output folder
   eleventyConfig.addPassthroughCopy({
     './public/': '/',
-  })
-
-  // run esbuild
-  eleventyConfig.on('eleventy.before', async () => {
-    await esbuild.build({
-      entryPoints: [
-        'src/_scripts/theme-preference.js',
-        'src/_scripts/command-line.js',
-        'src/_scripts/translator.js',
-      ],
-      outdir: 'src/_assets/js',
-      minify: process.env.NODE_ENV === 'production',
-      sourcemap: process.env.NODE_ENV !== 'production',
-      bundle: true,
-      target: ['es2017'],
-    })
   })
 
   // redirect from root to default language root
@@ -137,8 +119,5 @@ module.exports = function (eleventyConfig) {
       includes: '_includes',
       layouts: '_layouts',
     },
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
-    markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
   }
 }

@@ -13,21 +13,10 @@
     <link rel="manifest" href="{{ "/site.webmanifest" | locale_url }}"">
 
     {% if meta.env == 'production' %}
-    {% include "src/_includes/service-worker.njk" %}
+    <script src="/service-worker.js"></script>
     {% endif %}
 
-    {% set js %}
-    {% include "src/_assets/js/theme-preference.js" %}
-    {% endset %}
-
-    {% set js %}
-    {% include "src/_assets/js/translator.js" %}
-    {% endset %}
-
-    {% set js %}
-    {% include "src/_assets/js/command-line.js" %}
-    {% endset %}
-    <script type="module" defer>{{ js | safe }}</script>
+    <script src="/app.js" defer></script>
   </head>
   <body>
     <div id="app">
@@ -35,7 +24,7 @@
         {% include "partials/_toolbar.njk" %}
         {% include "partials/_navigation.njk" %}
         <main class="window">
-          {{content | safe}}
+          {{ content | safe }}
           {% include "partials/_input.njk" %}
         </main>
       </div>
