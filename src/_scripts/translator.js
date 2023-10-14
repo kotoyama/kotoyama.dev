@@ -17,12 +17,21 @@ class Translator {
     }, obj)
   }
 
-  t(key) {
+  t(key, params = {}) {
     const keys = key.split('.')
     const translation = this.find(translations, keys)
 
     if (translation && translation[this.locale]) {
-      return translation[this.locale]
+      let translatedText = translation[this.locale]
+
+      for (const param in params) {
+        if (params.hasOwnProperty(param)) {
+          const paramPattern = `{{ ${param} }}`
+          translatedText = translatedText.replace(paramPattern, params[param])
+        }
+      }
+
+      return translatedText
     }
     return key
   }

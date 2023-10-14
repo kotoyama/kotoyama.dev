@@ -4,8 +4,8 @@ module.exports = {
     ru: 'Список доступных команд:',
   },
   'command-not-found': {
-    en: 'Command not found',
-    ru: 'Неизвестная команда',
+    en: 'Command not found: {{ command }}',
+    ru: 'Неизвестная команда: {{ command }}',
   },
   'nice-person': {
     en: 'A nice person :)',

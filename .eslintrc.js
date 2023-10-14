@@ -14,5 +14,6 @@ module.exports = {
     'no-console': ['warn'],
     'prettier/prettier': 'warn',
     'arrow-body-style': ['warn', 'as-needed'],
+    'no-prototype-builtins': 'off',
   },
 }
