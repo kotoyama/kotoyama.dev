@@ -5,6 +5,7 @@ import {
   WhoAmICommand,
   UnknownCommand,
 } from './commands'
+import { CommandHistory } from './command-history'
 
 const inputElement = document.querySelector('.input')
 const windowElement = document.querySelector('.window')
@@ -37,6 +38,18 @@ const createHistoryCommand = ({ value, isValid }) =>
     <span class='history-input${isValid ? ' valid' : ''}'>${value}</span>
   </div>`
 
+const checkIfValidCommand = (command) => {
+  const isValidCommand = !(command instanceof UnknownCommand)
+  if (isValidCommand) {
+    inputElement.classList.add('valid')
+  } else {
+    inputElement.classList.remove('valid')
+  }
+  return isValidCommand
+}
+
+const history = new CommandHistory()
+
 export const setupCommandLine = () => {
   helpElement.addEventListener('animationend', () => {
     helpElement.style.borderRight = 'none'
@@ -46,13 +59,7 @@ export const setupCommandLine = () => {
   inputElement.addEventListener('keyup', (event) => {
     const inputValue = inputElement.value.trim().toLowerCase()
     const command = Command.createCommand(inputValue)
-    const isValidCommand = !(command instanceof UnknownCommand)
-
-    if (isValidCommand) {
-      inputElement.classList.add('valid')
-    } else {
-      inputElement.classList.remove('valid')
-    }
+    const isValidCommand = checkIfValidCommand(command)
 
     if (event.key === 'Enter') {
       const result = command.execute()
@@ -68,8 +75,20 @@ export const setupCommandLine = () => {
         historyElement.innerHTML += result
       }
 
+      if (inputValue) {
+        history.push(command)
+      }
+
       inputElement.value = ''
       windowElement.scrollTop = windowElement.scrollHeight
+    } else if (event.key === 'ArrowUp') {
+      const historyCommand = history.movePrev()
+      inputElement.value = historyCommand.command ?? ''
+      checkIfValidCommand(historyCommand)
+    } else if (event.key === 'ArrowDown') {
+      const historyCommand = history.moveNext()
+      inputElement.value = historyCommand.command ?? ''
+      checkIfValidCommand(historyCommand)
     }
   })
 }
