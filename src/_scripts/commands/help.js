@@ -8,6 +8,8 @@ export class HelpCommand extends BaseCommand {
       'available-commands',
     )}\n</p><ul><li><code>help</code> - ${translator.t(
       'commands.help',
+    )}</li>\n<li><code>whoami</code> - ${translator.t(
+      'commands.whoami',
     )}</li>\n<li><code>toggle-theme</code> - ${translator.t(
       'commands.toggle-theme',
     )}</li>\n<li><code>clear</code> - ${translator.t(

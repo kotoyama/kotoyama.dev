@@ -4,7 +4,7 @@ html[data-theme='dark'] {
   --color-terminal-toolbar: var(--color-dark300);
   --color-terminal-window: var(--color-dark200);
   --color-inline-code: rgba(110, 118, 129, 0.4);
-  --terminal-indicator-color: var(--color-white100);
+  --color-terminal-indicator: var(--color-white100);
 }
 
 html[data-theme='auto'],
@@ -14,7 +14,7 @@ html[data-theme='light'] {
   --color-terminal-toolbar: var(--color-white200);
   --color-terminal-window: var(--color-white100);
   --color-inline-code: rgba(175, 184, 193, 0.2);
-  --terminal-indicator-color: var(--color-grey300);
+  --color-terminal-indicator: var(--color-grey300);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +24,6 @@ html[data-theme='light'] {
     --color-terminal-toolbar: var(--color-dark300);
     --color-terminal-window: var(--color-dark200);
     --color-inline-code: rgba(110, 118, 129, 0.4);
-    --terminal-indicator-color: var(--color-white100);
+    --color-terminal-indicator: var(--color-white100);
   }
 }

@@ -20,7 +20,7 @@
         border-radius: 50%;
 
         &[data-variant='red'] {
-          background-color: var(--color-red100);
+          background-color: var(--color-red200);
         }
 
         &[data-variant='yellow'] {
@@ -28,7 +28,7 @@
         }
 
         &[data-variant='green'] {
-          background-color: var(--color-green100);
+          background-color: var(--color-green200);
         }
       }
     }
@@ -63,7 +63,7 @@
       font-size: 1.8rem;
 
       & a {
-        color: var(--color-green100);
+        color: var(--color-green200);
         text-decoration: underline;
       }
     }
@@ -80,6 +80,14 @@
       & li {
         margin-bottom: var(--space-xs);
         font-size: 1.8rem;
+      }
+
+      .history-input {
+        color: var(--color-red100);
+
+        &.valid {
+          color: var(--color-green100);
+        }
       }
     }
 
@@ -104,19 +112,31 @@
 
       .query {
         display: inline-block;
+
+        .arrow {
+          color: var(--color-green100);
+        }
+
+        .directory {
+          color: var(--color-blue100);
+        }
       }
 
       .input {
         flex: 1;
         font-family: inherit;
         font-size: 1.8rem;
-        color: inherit;
-        caret-color: var(--terminal-indicator-color);
+        color: var(--color-red100);
+        caret-color: var(--color-terminal-indicator);
         background-color: inherit;
         border: none;
 
+        &.valid {
+          color: var(--color-green100);
+        }
+
         &:not(:focus) {
-          border-left: 0.8rem solid var(--terminal-indicator-color);
+          border-left: 0.8rem solid var(--color-terminal-indicator);
         }
 
         &:focus {

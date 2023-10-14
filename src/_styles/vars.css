@@ -8,10 +8,13 @@
   --color-dark100: #090d11;
   --color-dark200: #181e25;
   --color-dark300: #131920;
-  --color-green100: #40a02b;
+  --color-green100: #80d440;
+  --color-green200: #40a02b;
   --color-yellow100: #ffdc00;
   --color-orange100: #ffa500;
-  --color-red100: #d20f39;
+  --color-red100: #f14c70;
+  --color-red200: #d20f39;
+  --color-blue100: #4eacf9;
 
   --font-family: 'FiraCode', monospace;
   --font-size: 10px;
