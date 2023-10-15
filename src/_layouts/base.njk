@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ meta[lang].description }}">
-    <title>{{ meta[lang].title }}</title>
+    <meta name="author" content="{{ meta[lang].title }}">
+
+    <title>
+      {% if title %}
+        {{ title }} | {{ meta[lang].title }}
+      {% else %}
+        {{ meta[lang].title }}
+      {% endif %}
+    </title>
 
     {% favicons 'src/_assets/svg/favicon.svg', appleIconPadding=0 %}
 
@@ -16,8 +24,8 @@
     <script src="/service-worker.js"></script>
     {% endif %}
 
-    <script src="/polyfills.js" defer></script>
-    <script src="/app.js" defer></script>
+    <script type="module" src="/polyfills.js" defer></script>
+    <script type="module" src="/app.js" defer></script>
   </head>
   <body>
     <div id="app">

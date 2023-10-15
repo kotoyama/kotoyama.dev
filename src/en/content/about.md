@@ -1,5 +1,6 @@
 ---
 tags: page
+title: About
 permalink: /{{ lang }}/about/
 eleventyNavigation:
   key: ~/about

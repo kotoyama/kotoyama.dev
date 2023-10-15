@@ -1,5 +1,6 @@
 ---
 tags: page
+title: Experience
 permalink: /{{ lang }}/experience/
 eleventyNavigation:
   key: ~/experience

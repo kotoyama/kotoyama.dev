@@ -1,5 +1,6 @@
 ---
 tags: page
+title: Projects
 permalink: /{{ lang }}/projects/
 eleventyNavigation:
   key: ~/projects

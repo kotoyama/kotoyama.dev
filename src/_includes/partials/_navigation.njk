@@ -8,7 +8,7 @@
         <a
           {% if currentUrl === item.url %} aria-current="page" {% endif %}
           href="{{ item.url }}">
-            {{ item.title }}
+            {{ item.key }}
         </a>
       </li>
     {%- endfor %}
