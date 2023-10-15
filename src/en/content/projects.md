@@ -1,7 +1,9 @@
 ---
-title: '~/projects'
 tags: page
 permalink: /{{ lang }}/projects/
+eleventyNavigation:
+  key: ~/projects
+  order: 4
 ---
 
 # Indigenous initiatives

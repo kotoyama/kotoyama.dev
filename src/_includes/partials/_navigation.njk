@@ -1,5 +1,5 @@
 {% set currentUrl = page.url %}
-{% set content = collections["content_" + lang] %}
+{% set content = collections["content_" + lang] | eleventyNavigation %}
 
 <nav>
   <ul class="tabs">
@@ -8,7 +8,7 @@
         <a
           {% if currentUrl === item.url %} aria-current="page" {% endif %}
           href="{{ item.url }}">
-            {{ item.data.title }}
+            {{ item.title }}
         </a>
       </li>
     {%- endfor %}

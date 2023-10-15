@@ -1,7 +1,9 @@
 ---
-title: '~/about'
 tags: page
 permalink: /{{ lang }}/about/
+eleventyNavigation:
+  key: ~/about
+  order: 3
 ---
 
 # Technical skills

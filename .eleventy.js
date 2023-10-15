@@ -1,4 +1,5 @@
 const { EleventyI18nPlugin } = require('@11ty/eleventy')
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 const i18nPlugin = require('eleventy-plugin-i18n')
 const faviconsPlugin = require('eleventy-plugin-gen-favicons')
 const pluginPWA = require('eleventy-plugin-pwa-v2')
@@ -11,6 +12,7 @@ const translations = require('./src/_data/i18n')
 
 module.exports = function (eleventyConfig) {
   // add plugins
+  eleventyConfig.addPlugin(eleventyNavigationPlugin)
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: 'en',
   })

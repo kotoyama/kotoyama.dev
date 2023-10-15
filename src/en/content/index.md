@@ -1,7 +1,9 @@
 ---
-title: '~'
 tags: page
 permalink: /{{ lang }}/
+eleventyNavigation:
+  key: '~'
+  order: 1
 ---
 
 Hi! I'm Kate, a frontend engineer from Astana 👋

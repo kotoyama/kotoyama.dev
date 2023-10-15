@@ -1,7 +1,9 @@
 ---
-title: '~/experience'
 tags: page
 permalink: /{{ lang }}/experience/
+eleventyNavigation:
+  key: ~/experience
+  order: 2
 ---
 
 # 42px
