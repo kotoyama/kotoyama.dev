@@ -1,22 +1,37 @@
 .terminal {
-  width: 90vw;
-  max-width: 900px;
-  height: 550px;
-  border-radius: 8px;
+  --terminal-width: 90vw;
+  --terminal-height: 550px;
+  --terminal-max-width: 900px;
+
+  width: var(--terminal-width);
+  max-width: var(--terminal-max-width);
+  height: var(--terminal-height);
+  border-radius: var(--space-xs);
+
+  @media (--phoneDown) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
   .toolbar {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: var(--space-xl);
     padding: var(--space-s);
     background-color: var(--color-terminal-toolbar);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: var(--space-xs);
+    border-top-right-radius: var(--space-xs);
 
     .actions {
+      display: flex;
+      column-gap: var(--space-xs);
+
       .btn {
-        width: 16px;
-        height: 16px;
+        --btn-size: 16px;
+        width: var(--btn-size);
+        height: var(--btn-size);
         border-radius: 50%;
 
         &[data-variant='red'] {
@@ -35,13 +50,13 @@
   }
 
   .window {
-    height: calc(100% - 40px);
+    height: calc(100% - var(--space-xl));
     padding: var(--space-l);
     overflow: auto;
     overflow-wrap: break-word;
     background-color: var(--color-terminal-window);
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: var(--space-xs);
+    border-bottom-left-radius: var(--space-xs);
 
     & blockquote {
       padding: 0 1.5em;
@@ -71,7 +86,7 @@
     & code {
       padding: 0.2em 0.4em;
       background-color: var(--color-inline-code);
-      border-radius: 6px;
+      border-radius: var(--space-xs);
     }
 
     .history {
@@ -106,9 +121,13 @@
 
     .field {
       display: flex;
-      column-gap: 10px;
+      column-gap: var(--space-s);
       margin-bottom: var(--space-xxs);
       font-size: 1.8rem;
+
+      @media (--phoneDown) {
+        flex-direction: column;
+      }
 
       .query {
         display: inline-block;
@@ -146,20 +165,43 @@
     }
   }
 
-  .tabs {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+  & nav {
+    @media (--phoneDown) {
+      width: 100%;
+      overflow: hidden;
 
-    .tab {
-      & a {
+      &::after {
         display: block;
-        width: 100%;
-        padding: var(--space-xs);
-        font-size: 1.8rem;
-        text-align: center;
+        margin-bottom: calc(var(--space-m) * -1);
+        content: '';
+      }
+    }
 
-        &[aria-current='page'] {
-          background-color: var(--color-white200);
+    .tabs {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+
+      @media (--phoneDown) {
+        padding: 0 0 var(--space-m);
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+
+      .tab {
+        & a {
+          display: block;
+          width: 100%;
+          padding: var(--space-xs);
+          font-size: 1.8rem;
+          text-align: center;
+
+          @media (--phoneDown) {
+            padding: var(--space-xs) var(--space-m);
+          }
+
+          &[aria-current='page'] {
+            background-color: var(--color-white200);
+          }
         }
       }
     }
