@@ -11,7 +11,7 @@ module.exports = class {
 
   async render() {
     await esbuild.build({
-      entryPoints: ['src/_scripts/app.js'],
+      entryPoints: ['src/_scripts/polyfills.js', 'src/_scripts/app.js'],
       bundle: true,
       minify: isProduction,
       outdir: '_site',

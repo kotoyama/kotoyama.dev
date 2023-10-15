@@ -25,10 +25,14 @@ specifiers:
   postcss-preset-env: ^9.1.4
   prettier: ^3.0.3
   simple-git-hooks: ^2.9.0
+  smoothscroll-polyfill: ^0.4.4
   stylelint: ^15.10.3
   stylelint-config-recess-order: ^4.3.0
   stylelint-config-recommended: ^13.0.0
   stylelint-prettier: ^4.0.2
+
+dependencies:
+  smoothscroll-polyfill: 0.4.4
 
 devDependencies:
   '@11ty/eleventy': 2.0.1
@@ -6904,6 +6908,10 @@ packages:
     resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
     engines: {node: '>=8.0.0'}
     dev: true
+
+  /smoothscroll-polyfill/0.4.4:
+    resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==}
+    dev: false
 
   /socket.io-adapter/2.5.2:
     resolution: {integrity: sha512-87C3LO/NOMc+eMcpcxUBebGjkpMDkNBS9tf7KJqcDsmL936EChtVva71Dw2q4tQcuVC+hAUy4an2NO/sYXmwRA==}
